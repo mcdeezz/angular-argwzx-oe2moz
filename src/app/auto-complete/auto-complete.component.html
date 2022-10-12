@@ -1,0 +1,15 @@
+<mat-form-field class="example-full-width" appearance="{{ appearance }}">
+	<input
+    matInput
+    placeholder="{{ placeHolder  }}"
+    [matAutocomplete]="inputAuto"
+    [formControl]="fieldCtrl"
+    (keyup)="onSelect($event)"
+  />
+	<mat-autocomplete #inputAuto="matAutocomplete" showPanel="true"
+		(optionsScroll)="onScroll()" [displayWith]="displayFn">
+		<mat-option *ngFor="let element of filteredList | async" [value]="element" (click)="onSelect(element)"
+			[title]="(element || {}).name">{{element.name}}
+		</mat-option>
+	</mat-autocomplete>
+</mat-form-field>

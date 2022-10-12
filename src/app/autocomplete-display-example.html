@@ -1,0 +1,8 @@
+<form [formGroup]="generalForm">
+	<app-auto-complete [fieldCtrl]="generalForm.controls.language" [smartList]="languages" [placeHolder]="'Please Select'"
+		[appearance]="'fill'" (optionSelected)="selectedOption($event)" ></app-auto-complete>
+</form>
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
